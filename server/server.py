@@ -10,6 +10,7 @@ import json
 
 
 HOST = "62.109.6.118" # ip-адресс сервера, на котором работает скрипт
+PORT=8008 # порт сервера
 TEMP_FOLDER = os.path.join(os.getcwd(), "temp") # путь ко временной папке
 
 app = FastAPI()
@@ -40,17 +41,13 @@ def upload(file: UploadFile = File(...)):
                     raw_data = pars_txt_file(f.read())
                 data += raw_data
             results[source.split("2")[0]] = data
-        #print(results)
         # пересобираем результат парсинга в df
         Facility_df = pd.DataFrame(data=results["Facility"], columns=["Station", "Satellite", "Access", "Start Time (UTCG)", "Stop Time (UTCG)", "Duration (sec)"])
         Russia_df = pd.DataFrame(data=results["Russia"], columns=["Station", "Satellite", "Access", "Start Time (UTCG)", "Stop Time (UTCG)", "Duration (sec)"])
-
         results_data = main_magic(Facility_df, Russia_df)
-
         os.system(f'rm -r /{TEMP_FOLDER}')
         os.system(f'mkdir /{TEMP_FOLDER}')
-
-    return results_data
+        return results_data
 
 if __name__ == "__main__":
-    uvicorn.run(app, host=HOST, port=8008)
+    uvicorn.run(app, host=HOST, port=PORT)
