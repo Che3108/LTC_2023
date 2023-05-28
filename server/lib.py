@@ -162,7 +162,7 @@ def main_magic(Facility_df, Russia_df):
         # На тестовых данных дало потерю 0,5 Тб
        
         new_list_duration = []
-        if satellit[-7:-2] not in list_kinosat:
+        if sat[-7:-2] not in list_kinosat:
             summa = 0
             for dur in list_duration:
                 if summa < 0.15:
