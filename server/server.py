@@ -8,7 +8,9 @@ import pandas as pd
 from lib import pars_txt_file, main_magic
 import json
 
-TEMP_FOLDER = os.path.join(os.getcwd(), "temp")
+
+HOST = "62.109.6.118" # ip-адресс сервера, на котором работает скрипт
+TEMP_FOLDER = os.path.join(os.getcwd(), "temp") # путь ко временной папке
 
 app = FastAPI()
 
@@ -51,4 +53,4 @@ def upload(file: UploadFile = File(...)):
     return results_data
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="62.109.6.118", port=8008)
+    uvicorn.run(app, host=HOST, port=8008)
