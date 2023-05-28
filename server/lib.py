@@ -160,18 +160,18 @@ def main_magic(Facility_df, Russia_df):
         print('Завершено формирование таблиц с интервалами съемки')
         # Может пригодиться для "обрезания" списка съемки при заполнении нужного объема ЗУ
         # На тестовых данных дало потерю 0,5 Тб
-        """
+       
         new_list_duration = []
         if satellit[-7:-2] not in list_kinosat:
             summa = 0
             for dur in list_duration:
-                if summa < 0.21:
+                if summa < 0.15:
                     new_list_duration.append(dur)
                     summa  = summa + dur * 4 * 0.00012207
                 print(summa)
             list_duration = new_list_duration
         list_time_interval = list_time_interval[:len(list_duration)]
-        """
+        
         # Объединение съемки и зон видимости
         sum_1 = result[f"Full_date_{dates}"]
         sum_2 = result[f"For_foto_{dates}"]
