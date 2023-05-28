@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 
-URL = 'http://62.109.6.118:8008/upload'
+URL = 'http://185.246.65.175:8008/upload'
 ARHIVE_name = '/content/DATA_Files (1).zip'
 
 files = [
