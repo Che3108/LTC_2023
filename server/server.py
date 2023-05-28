@@ -9,7 +9,7 @@ from lib import pars_txt_file, main_magic
 import json
 
 
-HOST = "62.109.6.118" # ip-адресс сервера, на котором работает скрипт
+HOST = "185.246.65.175" # ip-адресс сервера, на котором работает скрипт
 PORT=8008 # порт сервера
 TEMP_FOLDER = os.path.join(os.getcwd(), "temp") # путь ко временной папке
 
