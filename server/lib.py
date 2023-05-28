@@ -287,7 +287,8 @@ def main_magic(Facility_df, Russia_df):
 
         reserve = 5
         max_sum_kinosat = sum_kinosat + 2 * reserve
-        max_sum_zorkii = sum_zorkii + reserve
+        #max_sum_zorkii = sum_zorkii + reserve
+        max_sum_zorkii = sum_zorkii
 
         dict_max_kinosat[dates] = max_sum_kinosat
         dict_max_zorkii[dates] = max_sum_zorkii
