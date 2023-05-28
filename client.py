@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import requests
-import pandas as pd
 
 
 URL = 'http://185.246.65.175:8008/upload'
