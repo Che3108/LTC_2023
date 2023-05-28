@@ -48,7 +48,7 @@ def main_magic(Facility_df, Russia_df):
                                                       Facility_df['Start Time (UTCG)'] < date_2)]
         russia_day = Russia_df.loc[np.logical_and(Russia_df['Start Time (UTCG)'] >= date_1,
                                                    Russia_df['Start Time (UTCG)'] < date_2)]
-         return {"delta_date": delta_date, f"Facility_{date_1.date()}": facility_day, f"Russia_{date_1.date()}": russia_day}
+        return {"delta_date": delta_date, f"Facility_{date_1.date()}": facility_day, f"Russia_{date_1.date()}": russia_day}
  
     def intersection(date_on, date_off, start_date, stop_date):
         """
@@ -146,8 +146,7 @@ def main_magic(Facility_df, Russia_df):
             list_time_interval = []
             list_duration = []
             for iter, row in df_cut.iterrows():
-             for iter, row in df_cut.iterrows():
-                 list_time_interval.append([row['Start Time (UTCG)'],
+                list_time_interval.append([row['Start Time (UTCG)'],
                                            row['Stop Time (UTCG)']])
                 list_duration.append(row['Duration (sec)'])
             if len(list_time_interval) != 0:
@@ -380,7 +379,7 @@ def main_magic(Facility_df, Russia_df):
                         vol_save = dict_mass[zu][3] * 0.25 * gbit_to_tb
                     #print('Объем сброса: ', vol_save)
                     if dict_fullness_sat[dict_mass[zu][0]] <= dict_mass[zu][4] and dict_fullness_sat[dict_mass[zu][0]] > vol_save:
-                         full_sum_save = full_sum_save + vol_save
+                        full_sum_save = full_sum_save + vol_save
                         #print('Заполненность спутника до: ', dict_fullness_sat[dict_mass[zu][0]])
                         dict_fullness_sat[dict_mass[zu][0]] = dict_fullness_sat[dict_mass[zu][0]] - vol_save
                         if dict_mass[zu][4] == 1:
